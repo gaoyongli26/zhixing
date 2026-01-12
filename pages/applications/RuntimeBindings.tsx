@@ -14,11 +14,11 @@ export const RuntimeBindings: React.FC = () => {
                         <table className="min-w-full divide-y divide-gray-200">
                             <thead className="bg-white">
                                 <tr>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Binding Name</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Type</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Target Instance</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Used By</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">绑定名称 (Binding Name)</th>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">类型 (Type)</th>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">目标实例 (Target)</th>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">使用方 (Used By)</th>
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">状态</th>
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
@@ -36,7 +36,7 @@ export const RuntimeBindings: React.FC = () => {
                                         Capability: parse_document
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-green-600 text-xs font-medium">
-                                        Active
+                                        生效中
                                     </td>
                                 </tr>
                                 <tr className="hover:bg-gray-50">
@@ -53,7 +53,24 @@ export const RuntimeBindings: React.FC = () => {
                                         Capability: exec_code
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-green-600 text-xs font-medium">
-                                        Active
+                                        生效中
+                                    </td>
+                                </tr>
+                                <tr className="hover:bg-gray-50">
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-sm font-bold text-gray-900">binding_postgres_primary</div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <span className="px-2 py-0.5 rounded text-xs bg-gray-100 text-gray-700 border border-gray-200">TCP/SQL</span>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 font-mono">
+                                        postgres-primary-01
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                                        Connector: Internal_DB
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-green-600 text-xs font-medium">
+                                        生效中
                                     </td>
                                 </tr>
                             </tbody>
@@ -66,22 +83,22 @@ export const RuntimeBindings: React.FC = () => {
                         <h3 className="font-bold text-gray-900 mb-4">绑定详情</h3>
                         <div className="space-y-4">
                             <div>
-                                <label className="block text-xs font-medium text-gray-500 uppercase mb-1">Selected Binding</label>
+                                <label className="block text-xs font-medium text-gray-500 uppercase mb-1">当前选中</label>
                                 <div className="text-sm font-bold text-gray-900">binding_python_sandbox</div>
                             </div>
                             <div>
-                                <label className="block text-xs font-medium text-gray-500 uppercase mb-1">Connection Protocol</label>
+                                <label className="block text-xs font-medium text-gray-500 uppercase mb-1">连接协议 (Protocol)</label>
                                 <div className="p-2 bg-gray-50 border border-gray-200 rounded text-xs font-mono text-gray-600">
                                     mcp://10.0.0.5:9090
                                 </div>
                             </div>
                             <div>
-                                <label className="block text-xs font-medium text-gray-500 uppercase mb-1">Auth Strategy</label>
-                                <div className="text-sm text-gray-700">mTLS (Mutual TLS)</div>
+                                <label className="block text-xs font-medium text-gray-500 uppercase mb-1">认证策略 (Auth Strategy)</label>
+                                <div className="text-sm text-gray-700">mTLS (双向 TLS 认证)</div>
                             </div>
                             <div className="pt-4 border-t border-gray-100">
                                 <button className="w-full border border-gray-300 rounded text-sm py-2 text-gray-700 hover:bg-gray-50">
-                                    Test Connectivity
+                                    测试连通性 (Test Connectivity)
                                 </button>
                             </div>
                         </div>

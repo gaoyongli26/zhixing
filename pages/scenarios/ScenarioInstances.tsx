@@ -21,12 +21,12 @@ export const ScenarioInstances: React.FC = () => {
                 <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-50">
                         <tr>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Instance Name / ID</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Scenario Template</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Last Execution</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Trigger Config</th>
-                            <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Control</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">实例名称 / ID</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">所属场景模板 (Scenario Template)</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">运行状态 (Status)</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">最近执行 (Last Execution)</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">触发配置 (Trigger)</th>
+                            <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">操作 (Control)</th>
                         </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
@@ -37,27 +37,27 @@ export const ScenarioInstances: React.FC = () => {
                                 <div className="text-xs text-gray-500 font-mono">inst_8923</div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                                Weekly Financial Digest
+                                周度财务摘要生成
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                                     <span className="w-2 h-2 mr-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                                    Running
+                                    运行中
                                 </span>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                                 <div className="flex flex-col cursor-pointer hover:underline" onClick={() => navigate('/runs/explorer')}>
                                     <span className="text-sm font-medium text-gray-900">Success</span>
-                                    <span className="text-xs text-gray-500">2 hours ago</span>
+                                    <span className="text-xs text-gray-500">2 小时前</span>
                                 </div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                Every Friday, 9:00 AM
+                                每周五, 9:00 AM
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <div className="flex justify-end gap-2">
-                                    <button className="text-gray-400 hover:text-yellow-600" title="Pause"><Icon name="pause" /></button>
-                                    <button className="text-gray-400 hover:text-red-600" title="Stop"><Icon name="stop" /></button>
+                                    <button className="text-gray-400 hover:text-yellow-600" title="暂停"><Icon name="pause" /></button>
+                                    <button className="text-gray-400 hover:text-red-600" title="停止"><Icon name="stop" /></button>
                                 </div>
                             </td>
                         </tr>
@@ -69,18 +69,18 @@ export const ScenarioInstances: React.FC = () => {
                                 <div className="text-xs text-gray-500 font-mono">inst_1102</div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                                Customer Refund Handler
+                                客户退款自动处理
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
                                     <span className="w-2 h-2 mr-1.5 bg-yellow-500 rounded-full"></span>
-                                    Paused
+                                    已暂停
                                 </span>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                                 <div className="flex flex-col cursor-pointer hover:underline" onClick={() => navigate('/runs/explorer')}>
                                     <span className="text-sm font-medium text-red-600">Failed</span>
-                                    <span className="text-xs text-gray-500">Yesterday</span>
+                                    <span className="text-xs text-gray-500">昨天</span>
                                 </div>
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -88,8 +88,8 @@ export const ScenarioInstances: React.FC = () => {
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <div className="flex justify-end gap-2">
-                                    <button className="text-brand-600 hover:text-brand-800" title="Resume"><Icon name="play" /></button>
-                                    <button className="text-gray-400 hover:text-red-600" title="Stop"><Icon name="stop" /></button>
+                                    <button className="text-brand-600 hover:text-brand-800" title="恢复"><Icon name="play" /></button>
+                                    <button className="text-gray-400 hover:text-red-600" title="停止"><Icon name="stop" /></button>
                                 </div>
                             </td>
                         </tr>
@@ -102,7 +102,7 @@ export const ScenarioInstances: React.FC = () => {
                 <div>
                     <h4 className="text-sm font-bold text-blue-900">寻找执行细节？</h4>
                     <p className="text-xs text-blue-700 mt-1">
-                        Instance 本身不存储日志。点击具体的 "Last Execution" 或前往 <span className="font-mono font-bold">Runs Explorer</span> 查看完整的执行事实 (Traces, Costs, Audit Logs)。
+                        Instance 本身不存储日志。点击具体的 "最近执行" 或前往 <span className="font-mono font-bold">Runs Explorer</span> 查看完整的执行事实 (Traces, Costs, Audit Logs)。
                     </p>
                 </div>
                 <button 
